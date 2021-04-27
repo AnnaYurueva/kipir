@@ -83,7 +83,7 @@ $(function () {
     /*Страница дизайна первый блок
     включаем слайдер на экранах меньше 930px*/
     let mainSlider = null;
-    const mediaQuerySize = 930;
+    const mediaQuerySize = 990;
     /*Инициальзируем слайдер*/
     function mainSliderInit() {
         if (!mainSlider) {
@@ -94,12 +94,17 @@ $(function () {
                     delay: 3000,
                     disableOnInteraction: false
                 },
-                scrollbar: {
-                    el: '.main-scrollbar',
-                    dragSize: 'auto',
-                    draggable: true,
-                    snapOnRelease: true
+                pagination: {
+                    el: '.design-block__pagination',
+                    dynamicBullets: true,
+                    clickable: true
                 },
+                // scrollbar: {
+                //     el: '.main-scrollbar',
+                //     dragSize: 'auto',
+                //     draggable: true,
+                //     snapOnRelease: true,
+                // },
                 breakpoints: {
                     320: {
                         slidesPerView: 1,
@@ -108,11 +113,11 @@ $(function () {
                     500: {
                         slidesPerView: 2,
                         slidesPerGroup: 1
-                    },
-                    650: {
-                        slidesPerView: 3,
-                        slidesPerGroup: 1
                     }
+                    // 800: {
+                    //     slidesPerView: 3,
+                    //     slidesPerGroup: 1
+                    // },
                 }
             });
         }
@@ -148,10 +153,13 @@ $(function () {
     const footerBtnOpenForm = document.getElementById('footerBtnOpenForm');
     const modalForm = document.getElementById('modalForm');
     const modalFormClose = document.getElementById('modalFormClose');
+    if (modalForm) {
+        modalFormClose.addEventListener('click', OpenCloseModalForm);
+    }
 
-    footerBtnOpenForm.addEventListener('click', OpenCloseModalForm);
-    modalFormClose.addEventListener('click', OpenCloseModalForm);
-
+    if (footerBtnOpenForm) {
+        footerBtnOpenForm.addEventListener('click', OpenCloseModalForm);
+    }
     function OpenCloseModalForm() {
         modalForm.classList.toggle('show-modal');
     }
@@ -218,9 +226,12 @@ $(function () {
     const openModalVideo = document.getElementById('openModalVideo');
     const modalCloseVideo = document.getElementById('modalCloseVideo');
     const VideoInModal = document.getElementById('VideoInModal');
-
-    openModalVideo.addEventListener('click', OpenModalVideo);
-    modalCloseVideo.addEventListener('click', CloseModalVideo);
+    if (openModalVideo) {
+        openModalVideo.addEventListener('click', OpenModalVideo);
+    }
+    if (modalCloseVideo) {
+        modalCloseVideo.addEventListener('click', CloseModalVideo);
+    }
 
     function OpenModalVideo() {
         modalVideo.classList.add('show-modal');

@@ -970,6 +970,43 @@ header {
   border: none;
   cursor: pointer; }
 
+.link-design-svg {
+  margin-left: 5px;
+  fill: #ffffff; }
+
+.footer__video:hover .link-design-svg {
+  fill: #D61D1D; }
+
+.link-design__title {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF; }
+  .link-design__title:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: calc(50% - 20px);
+    top: -9px;
+    width: 39px;
+    height: 3px;
+    background: #D61D1D;
+    -webkit-border-radius: 0 9px 0 9px;
+            border-radius: 0 9px 0 9px;
+    -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.23);
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.23); }
+
+.link-design__subtitle {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 15px;
+  text-align: center;
+  color: #D61D1D; }
+
 .modal {
   display: none;
   position: fixed;
@@ -2372,6 +2409,18 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media (max-width: 991px) {
+    .slide-team-logo {
+      height: 190px; } }
+  @media (max-width: 650px) {
+    .slide-team-logo {
+      height: 180px; } }
+  @media (max-width: 500px) {
+    .slide-team-logo {
+      height: 150px; } }
+  @media (max-width: 400px) {
+    .slide-team-logo {
+      height: 120px; } }
   .slide-team-logo img {
     position: absolute;
     /* абсолютное позиционирование*/
@@ -4162,7 +4211,7 @@ header {
   background: url("./../img/design-bg-desc.png") no-repeat center;
   -webkit-background-size: cover;
           background-size: cover; }
-  @media (max-width: 930px) {
+  @media (max-width: 990px) {
     .main {
       padding: 140px 0 30px; } }
   @media (max-width: 650px) {
@@ -4232,10 +4281,18 @@ header {
   max-width: 1170px;
   margin: 0 auto;
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  overflow: hidden; }
 
 .main-swiper {
   width: 100%; }
+  .main-swiper > .design-block__pagination {
+    display: none; }
+    @media (max-width: 990px) {
+      .main-swiper > .design-block__pagination {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
 
 .main__wrap {
   display: -webkit-box;
@@ -4247,51 +4304,54 @@ header {
           justify-content: space-between; }
 
 .main__element {
-  width: 245px; }
-  @media (min-width: 320px) {
+  width: 245px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .main__element img {
+    display: block; }
+  @media (max-width: 990px) {
     .main__element {
-      width: 240px; } }
-  @media (min-width: 500px) {
-    .main__element {
-      width: 240px; } }
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
 
 .main__description {
   position: relative;
+  width: 180px;
+  padding-left: 20px;
   display: block;
-  margin-top: 49px;
-  margin-bottom: 30px;
   font-weight: 600;
   font-size: 15px;
   line-height: 21px;
   color: #F8F8F8; }
   .main__description:before {
     content: '';
+    display: block;
     position: absolute;
     left: 0;
-    top: -17px;
-    width: 25px;
-    height: 5px;
+    top: calc(50% - 13px);
+    width: 5px;
+    height: 25px;
     background: #D61D1D;
     -webkit-border-radius: 0 9px 0 9px;
             border-radius: 0 9px 0 9px;
     -webkit-box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.23);
             box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.23); }
-
-.main-scrollbar {
-  display: none; }
-  @media (max-width: 930px) {
-    .main-scrollbar {
-      display: block;
-      height: 4px;
-      padding: 1px;
-      background: rgba(255, 255, 255, 0.1);
-      -webkit-border-radius: 1px;
-              border-radius: 1px; } }
-
-.main-scrollbar-drag {
-  display: block;
-  height: 2px;
-  background-color: #D61D1D; }
+    @media (max-width: 990px) {
+      .main__description:before {
+        left: 5%; } }
+  @media (max-width: 990px) {
+    .main__description {
+      padding-left: 10vw;
+      width: 80%; } }
 
 .develop {
   background-color: #FFFFFF;
@@ -4618,7 +4678,8 @@ header {
 
 .projects {
   padding-top: 56px;
-  background-color: white; }
+  background-color: white;
+  margin-bottom: -50px; }
 
 .projects__wrap {
   -ms-flex-wrap: wrap;
