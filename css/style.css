@@ -2442,9 +2442,9 @@ header {
   .slide-team-logo:hover .slide-team-logo-first {
     /* при наведении курсора первая картинка становится не прозрачной */
     opacity: 1;
-    -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
     -webkit-filter: alpha opacity=100;
             filter: alpha opacity=100; }
   .slide-team-logo:hover .slide-team-logo-second,
@@ -4206,20 +4206,66 @@ header {
         text-decoration: none; }
 
 /*design-page*/
+.main__intro{
+  height: 100%;
+  min-height: 600px;
+  overflow: hidden;
+}
+.fullscreen-bg__video{
+  position: relative;
+  display: block;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 850px;
+  /*min-height: 850px;*/
+  background-color: #000;
+  /*vertical-align: middle;*/
+}
+@media (max-width: 1500px){
+  .fullscreen-bg__video{
+    max-height: 850px;
+  }
+}
+@media (max-width: 990px){
+  .fullscreen-bg__video{
+    max-height: 770px;
+  }
+}
+@media (max-width: 650px){
+  .fullscreen-bg__video{
+    max-height: 530px;
+    margin-left: -30%;
+  }
+}
+@media (max-width: 431px){
+  .fullscreen-bg__video{
+    max-height: 550px;
+  }
+}
+@media (max-width: 355px){
+  .fullscreen-bg__video{
+    max-height: 600px;
+  }
+}
 .main {
-  padding: 140px 0;
-  background: url("./../img/design-bg-desc.png") no-repeat center;
-  -webkit-background-size: cover;
-          background-size: cover; }
+  position: absolute;
+  display: block;
+  top: 0;
+  width: 100%;
+  padding: 160px 0 185px;
+  background: linear-gradient(91.01deg, rgba(20, 31, 44, 0.63) 2.76%, rgba(8, 14, 21, 0.76) 98.34%);
+  backdrop-filter: blur(4px);
+  }
+
   @media (max-width: 990px) {
     .main {
       padding: 140px 0 30px; } }
   @media (max-width: 650px) {
     .main {
-      background: url("./../img/design-bg-mob.png") no-repeat center;
-      -webkit-background-size: cover;
-              background-size: cover;
-      padding: 70px 0 20px; } }
+      padding: 70px 0 20px;
+    } }
 
 .main__title {
   position: relative;
@@ -4356,9 +4402,15 @@ header {
 .develop {
   background-color: #FFFFFF;
   padding: 40px 0 80px; }
+  @media (max-width: 650px) {
+    .develop {
+      margin-top: -70px; } }
   @media (max-width: 600px) {
     .develop {
       padding: 40px 0; } }
+  @media (max-width: 355px) {
+    .develop {
+      margin-top: 0; } }
 
 .develop__wrap {
   display: -webkit-box;
