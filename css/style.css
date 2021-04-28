@@ -519,7 +519,7 @@ header {
   @media (max-width: 670px) {
     .header__menu {
       padding: 20px 0 0;
-      max-height: 300px;
+      max-height: 400px;
       -webkit-background-size: contain;
               background-size: contain;
       background: url("../img/header-bg.png") no-repeat center; } }
